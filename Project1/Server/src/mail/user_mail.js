@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
 export const EmailOtp = async(email, name, randomOtp) => {
     try {
         const info = await transporter.sendMail({
-            from: '"Example Team" <team@example.com>', 
+            from: process.env.SMTP_USER, 
             to: email, 
             subject: "Hello", 
             text: "Hello world?", 

@@ -51,6 +51,7 @@ export const Verify_user = async (req, res) => {
     try {
         const { id } = req.params
         const Otp = req.body.Otp
+        console.log(id)
 
         if (!Otp) return res.status(400).send({ status: false, success: false, msg: 'pls provide Otp' })
 
@@ -93,7 +94,7 @@ export const resendOtp = async (req, res) => {
 export const Login_user = async (req, res) => {
     try {
         const { email, password } = req.body
-        console.log(req.body)
+        // console.log(req.body)
         const checkuser = await user_model.findOne({ email: email })
         if (!checkuser) return res.status(404).send({ status: false, msg: 'User not found' })
 

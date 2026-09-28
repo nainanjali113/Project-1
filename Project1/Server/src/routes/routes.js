@@ -4,8 +4,8 @@ import { Create_user, Verify_user, Login_user,resendOtp, get_all_user } from '..
 export const routes=express.Router()
 
 routes.post('/create',Create_user)
-routes.get('/verify/:id',Verify_user)
-routes.get('/resend/:id',resendOtp)
+routes.post('/verify/:id',Verify_user)
+routes.post('/resend/:id',resendOtp)
 routes.post('/login',Login_user)
 routes.get('/get_all_user',get_all_user)
 
